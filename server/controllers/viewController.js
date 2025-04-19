@@ -6,16 +6,17 @@ const redisClient = require('../utils/redisClient')
 module.exports.getCropRecommendation = async(req,res) =>{
     try {
         
-        const {soilType, season,waterAvailability,investmentRange} = req.body;
+        const {soilTypes, season,water,investment} = req.body;
         
-        if (!soilType || !season || !waterAvailability || !investmentRange) {
+        if (!soilTypes || !season || !water || !investment) {
             return res.status(400).json({ message: "Please provide all the required parameters" });        
         }
+        
         const query = {
-            suitableSoil : soilType,
-            suitableSeason :season,
-            waterRequired:{$lte :waterAvailability},
-            investmentRange:{$lte :investmentRange}
+            soil : soilTypes,
+            season :season,
+            water:{$lte :water},
+            investment:{$lte :investment}
         }
         const crop = await Crop.find(query).limit(2);
         
@@ -28,16 +29,16 @@ module.exports.getCropRecommendation = async(req,res) =>{
     
     const cropWithScores = crop.map(crop => {
         let score = 0;
-        if (Array.isArray(crop.suitableSoilTypes) && crop.suitableSoilTypes.includes(soilType)) score += 30;
-        if (Array.isArray(crop.suitableSeason) && crop.suitableSeason.includes(season)) score += 30;
-        if (crop.waterRequired <= waterAvailability) score += 20;
-        if (crop.investmentRange <= investmentRange) score += 20;
+        if (Array.isArray(crop.soilTypes) && crop.soilTypes.includes(soilTypes)) score += 30;
+        if (Array.isArray(crop.season) && crop.season.includes(season)) score += 30;
+        if (crop.water <= water) score += 20;
+        if (crop.investment <= investment) score += 20;
         
-        return { ...crop, score };
+        return { crop, score };
     });
-    
     return res.status(200).json(
         { success: true, message: "Crop recommendation found", data: cropWithScores }    );
+    
  } catch (error) {
         console.error('Crop recommendation error:', error);
         return res.status(500).json({

@@ -1,376 +1,122 @@
 [
- {
-   "name": "Tomato",
-   "scientificName": "Solanum lycopersicum",
-   "description": "Tomato is a widely grown crop for its edible fruit, typically red when ripe.",
-   "suitableSoilTypes": ["Loamy", "Sandy"],
-   "suitableSeasons": ["Spring", "Summer"],
-   "waterRequirements": "Medium",
-   "averageInvestment": 1500,
-   "growthDuration": 80,
-   "commonPests": ["Aphids", "Whiteflies", "Spider Mites"],
-   "images": ["tomato1.jpg", "tomato2.jpg"],
-   "suitabilityScore": 85
- },
- {
-   "name": "Wheat",
-   "scientificName": "Triticum aestivum",
-   "description": "Wheat is a staple cereal grain used for food and other products.",
-   "suitableSoilTypes": ["Clay", "Loamy"],
-   "suitableSeasons": ["Spring", "Autumn"],
-   "waterRequirements": "Low",
-   "averageInvestment": 2000,
-   "growthDuration": 120,
-   "commonPests": ["Wheat Rust", "Aphids", "Fusarium Head Blight"],
-   "images": ["wheat1.jpg", "wheat2.jpg"],
-   "suitabilityScore": 90
- },
- {
-   "name": "Rice",
-   "scientificName": "Oryza sativa",
-   "description": "Rice is a primary food crop, especially in Asia, and grows in flooded conditions.",
-   "suitableSoilTypes": ["Clay", "Silty"],
-   "suitableSeasons": ["Summer", "Rainy"],
-   "waterRequirements": "High",
-   "averageInvestment": 3000,
-   "growthDuration": 150,
-   "commonPests": ["Rice Weevil", "Brown Plant Hopper", "Rice Stem Borer"],
-   "images": ["rice1.jpg", "rice2.jpg"],
-   "suitabilityScore": 88
- },
- {
-   "name": "Carrot",
-   "scientificName": "Daucus carota",
-   "description": "Carrot is a root vegetable, typically orange, used in many culinary dishes.",
-   "suitableSoilTypes": ["Loamy", "Sandy"],
-   "suitableSeasons": ["Spring", "Autumn"],
-   "waterRequirements": "Medium",
-   "averageInvestment": 500,
-   "growthDuration": 75,
-   "commonPests": ["Carrot Fly", "Aphids", "Root Knot Nematode"],
-   "images": ["carrot1.jpg", "carrot2.jpg"],
-   "suitabilityScore": 80
- },
- {
-   "name": "Potato",
-   "scientificName": "Solanum tuberosum",
-   "description": "Potatoes are tuberous plants, known for their edible underground stems.",
-   "suitableSoilTypes": ["Loamy", "Clay"],
-   "suitableSeasons": ["Spring", "Autumn"],
-   "waterRequirements": "Medium",
-   "averageInvestment": 1200,
-   "growthDuration": 100,
-   "commonPests": ["Potato Beetle", "Aphids", "Wireworms"],
-   "images": ["potato1.jpg", "potato2.jpg"],
-   "suitabilityScore": 82
- },
- {
-   "name": "Lettuce",
-   "scientificName": "Lactuca sativa",
-   "description": "Lettuce is a leafy vegetable commonly used in salads and sandwiches.",
-   "suitableSoilTypes": ["Loamy", "Silty"],
-   "suitableSeasons": ["Spring", "Autumn"],
-   "waterRequirements": "High",
-   "averageInvestment": 300,
-   "growthDuration": 60,
-   "commonPests": ["Aphids", "Caterpillars", "Leaf Miners"],
-   "images": ["lettuce1.jpg", "lettuce2.jpg"],
-   "suitabilityScore": 75
- },
- {
-   "name": "Soybean",
-   "scientificName": "Glycine max",
-   "description": "Soybeans are grown for their edible seeds, which are used in many food products.",
-   "suitableSoilTypes": ["Loamy", "Silty"],
-   "suitableSeasons": ["Spring", "Summer"],
-   "waterRequirements": "Medium",
-   "averageInvestment": 1800,
-   "growthDuration": 120,
-   "commonPests": ["Soybean Aphid", "Spider Mites", "Root Rot"],
-   "images": ["soybean1.jpg", "soybean2.jpg"],
-   "suitabilityScore": 88
- },
- {
-   "name": "Cabbage",
-   "scientificName": "Brassica oleracea",
-   "description": "Cabbage is a leafy green vegetable commonly used in salads and soups.",
-   "suitableSoilTypes": ["Loamy", "Clay"],
-   "suitableSeasons": ["Spring", "Autumn"],
-   "waterRequirements": "Medium",
-   "averageInvestment": 700,
-   "growthDuration": 90,
-   "commonPests": ["Cabbage Worm", "Aphids", "Cabbage Root Maggot"],
-   "images": ["cabbage1.jpg", "cabbage2.jpg"],
-   "suitabilityScore": 80
- },
- {
-   "name": "Corn",
-   "scientificName": "Zea mays",
-   "description": "Corn is a staple cereal crop known for its kernels used for food, fuel, and feed.",
-   "suitableSoilTypes": ["Loamy", "Silty"],
-   "suitableSeasons": ["Summer", "Autumn"],
-   "waterRequirements": "Medium",
-   "averageInvestment": 2500,
-   "growthDuration": 110,
-   "commonPests": ["Corn Earworm", "Corn Rootworm", "Aphids"],
-   "images": ["corn1.jpg", "corn2.jpg"],
-   "suitabilityScore": 85
- },
- {
-   "name": "Strawberry",
-   "scientificName": "Fragaria × ananassa",
-   "description": "Strawberries are small, red, sweet fruits that are widely loved for their taste.",
-   "suitableSoilTypes": ["Loamy", "Silty"],
-   "suitableSeasons": ["Spring", "Summer"],
-   "waterRequirements": "High",
-   "averageInvestment": 1200,
-   "growthDuration": 80,
-   "commonPests": ["Strawberry Weevil", "Aphids", "Spider Mites"],
-   "images": ["strawberry1.jpg", "strawberry2.jpg"],
-   "suitabilityScore": 89
- },
- {
- 
-   "name": "Rice",
-   "scientificName": "Oryza sativa",
-   "type": "Cereal",
-   "suitableSoilTypes": ["Alluvial", "Clayey", "Loamy"],
-   "suitableSeasons": ["Kharif", "Rabi"],
-   "waterRequirements": "High",
-   "temperatureRange": {
-     "min": 21,
-     "max": 37,
-     "optimal": 25
-   },
-   "rainfallRequirements": {
-     "min": 1000,
-     "max": 2500,
-     "optimal": 1500
-   },
-   "growthDuration": 90,
-   "investmentPerAcre": {
-     "low": 15000,
-     "medium": 25000,
-     "high": 40000
-   },
-   "commonStates": ["West Bengal", "Punjab", "Uttar Pradesh", "Andhra Pradesh"],
-   "nutritionalRequirements": {
-     "nitrogen": "High",
-     "phosphorus": "Medium",
-     "potassium": "Medium"
-   }
- },
- {
-
-   "name": "Wheat",
-   "scientificName": "Triticum aestivum",
-   "type": "Cereal",
-   "suitableSoilTypes": ["Loamy", "Clayey Loam"],
-   "suitableSeasons": ["Rabi"],
-   "waterRequirements": "Medium",
-   "temperatureRange": {
-     "min": 10,
-     "max": 25,
-     "optimal": 15
-   },
-   "rainfallRequirements": {
-     "min": 500,
-     "max": 1000,
-     "optimal": 750
-   },
-   "growthDuration": 120,
-   "investmentPerAcre": {
-     "low": 12000,
-     "medium": 20000,
-     "high": 35000
-   },
-   "commonStates": ["Uttar Pradesh", "Punjab", "Madhya Pradesh", "Haryana"],
-   "nutritionalRequirements": {
-     "nitrogen": "High",
-     "phosphorus": "High",
-     "potassium": "Medium"
-   }
- },
- {
-
-   "name": "Maize",
-   "scientificName": "Zea mays",
-   "type": "Cereal",
-   "suitableSoilTypes": ["Well-drained Loamy", "Sandy Loam"],
-   "suitableSeasons": ["Kharif", "Rabi"],
-   "waterRequirements": "Medium",
-   "temperatureRange": {
-     "min": 18,
-     "max": 32,
-     "optimal": 25
-   },
-   "rainfallRequirements": {
-     "min": 500,
-     "max": 1000,
-     "optimal": 750
-   },
-   "growthDuration": 90,
-   "investmentPerAcre": {
-     "low": 10000,
-     "medium": 18000,
-     "high": 30000
-   },
-   "commonStates": ["Karnataka", "Madhya Pradesh", "Maharashtra", "Rajasthan"],
-   "nutritionalRequirements": {
-     "nitrogen": "High",
-     "phosphorus": "Medium",
-     "potassium": "Medium"
-   }
- },
- {
-  
-   "name": "Cotton",
-   "scientificName": "Gossypium spp.",
-   "type": "Fiber",
-   "suitableSoilTypes": ["Black Cotton", "Alluvial"],
-   "suitableSeasons": ["Kharif"],
-   "waterRequirements": "Medium",
-   "temperatureRange": {
-     "min": 21,
-     "max": 37,
-     "optimal": 30
-   },
-   "rainfallRequirements": {
-     "min": 500,
-     "max": 1000,
-     "optimal": 750
-   },
-   "growthDuration": 150,
-   "investmentPerAcre": {
-     "low": 25000,
-     "medium": 40000,
-     "high": 60000
-   },
-   "commonStates": ["Gujarat", "Maharashtra", "Telangana", "Punjab"],
-   "nutritionalRequirements": {
-     "nitrogen": "High",
-     "phosphorus": "Medium",
-     "potassium": "High"
-   }
- },
- {
-   "name": "Sugarcane",
-   "scientificName": "Saccharum officinarum",
-   "type": "Cash Crop",
-   "suitableSoilTypes": ["Heavy Clay", "Alluvial"],
-   "suitableSeasons": ["Year-round"],
-   "waterRequirements": "Very High",
-   "temperatureRange": {
-     "min": 20,
-     "max": 35,
-     "optimal": 27
-   },
-   "rainfallRequirements": {
-     "min": 1500,
-     "max": 2500,
-     "optimal": 2000
-   },
-   "growthDuration": 365,
-   "investmentPerAcre": {
-     "low": 50000,
-     "medium": 75000,
-     "high": 120000
-   },
-   "commonStates": ["Uttar Pradesh", "Maharashtra", "Karnataka", "Tamil Nadu"],
-   "nutritionalRequirements": {
-     "nitrogen": "Very High",
-     "phosphorus": "Medium",
-     "potassium": "High"
-   }
- },
- {
-   "name": "Groundnut",
-   "scientificName": "Arachis hypogaea",
-   "type": "Oilseed",
-   "suitableSoilTypes": ["Sandy Loam", "Red Soil"],
-   "suitableSeasons": ["Kharif", "Rabi"],
-   "waterRequirements": "Low",
-   "temperatureRange": {
-     "min": 20,
-     "max": 35,
-     "optimal": 27
-   },
-   "rainfallRequirements": {
-     "min": 500,
-     "max": 1000,
-     "optimal": 750
-   },
-   "growthDuration": 120,
-   "investmentPerAcre": {
-     "low": 15000,
-     "medium": 25000,
-     "high": 40000
-   },
-   "commonStates": ["Gujarat", "Andhra Pradesh", "Tamil Nadu", "Rajasthan"],
-   "nutritionalRequirements": {
-     "nitrogen": "Low",
-     "phosphorus": "Medium",
-     "potassium": "Medium"
-   }
- },
- {
-   "name": "Pigeon Pea (Arhar)",
-   "scientificName": "Cajanus cajan",
-   "type": "Pulse",
-   "suitableSoilTypes": ["Sandy Loam", "Red Soil"],
-   "suitableSeasons": ["Kharif"],
-   "waterRequirements": "Low",
-   "temperatureRange": {
-     "min": 20,
-     "max": 35,
-     "optimal": 27
-   },
-   "rainfallRequirements": {
-     "min": 600,
-     "max": 1000,
-     "optimal": 800
-   },
-   "growthDuration": 150,
-   "investmentPerAcre": {
-     "low": 8000,
-     "medium": 15000,
-     "high": 25000
-   },
-   "commonStates": ["Maharashtra", "Karnataka", "Madhya Pradesh", "Uttar Pradesh"],
-   "nutritionalRequirements": {
-     "nitrogen": "Low",
-     "phosphorus": "Medium",
-     "potassium": "Medium"
-   }
- },
- {
-   "name": "Soybean",
-   "scientificName": "Glycine max",
-   "type": "Oilseed",
-   "suitableSoilTypes": ["Clay Loam", "Black Soil"],
-   "suitableSeasons": ["Kharif"],
-   "waterRequirements": "Medium",
-   "temperatureRange": {
-     "min": 20,
-     "max": 30,
-     "optimal": 25
-   },
-   "rainfallRequirements": {
-     "min": 500,
-     "max": 1000,
-     "optimal": 750
-   },
-   "growthDuration": 100,
-   "investmentPerAcre": {
-     "low": 12000,
-     "medium": 20000,
-     "high": 35000
-   },
-   "commonStates": ["Madhya Pradesh", "Maharashtra", "Rajasthan"],
-   "nutritionalRequirements": {
-     "nitrogen": "Medium",
-     "phosphorus": "High",
-     "potassium": "Medium"
-   }
- }
+  {
+    "name": "Tomato",
+    "scientificName": "Solanum lycopersicum",
+    "type": "Vegetable",
+    "description": "Widely grown for its edible red fruit.",
+    "soilTypes": ["Loamy", "Sandy"],
+    "seasons": ["Spring", "Summer"],
+    "water": "Medium",
+    "duration": 80,
+    "investment": 1500,
+    "pests": ["Aphids", "Whiteflies", "Spider Mites"]
+  },
+  {
+    "name": "Wheat",
+    "scientificName": "Triticum aestivum",
+    "type": "Cereal",
+    "description": "Staple grain used in food products.",
+    "soilTypes": ["Loamy", "Clayey Loam"],
+    "seasons": ["Rabi"],
+    "water": "Medium",
+    "duration": 120,
+    "investment": 20000,
+    "pests": ["Wheat Rust", "Aphids", "Fusarium"]
+  },
+  {
+    "name": "Rice",
+    "scientificName": "Oryza sativa",
+    "type": "Cereal",
+    "description": "Primary food crop grown in flooded fields.",
+    "soilTypes": ["Clayey", "Alluvial", "Loamy"],
+    "seasons": ["Kharif", "Rabi"],
+    "water": "High",
+    "duration": 90,
+    "investment": 25000,
+    "pests": ["Weevil", "Stem Borer", "Hopper"]
+  },
+  {
+    "name": "Carrot",
+    "scientificName": "Daucus carota",
+    "type": "Vegetable",
+    "description": "Edible orange root used in cooking.",
+    "soilTypes": ["Loamy", "Sandy"],
+    "seasons": ["Spring", "Autumn"],
+    "water": "Medium",
+    "duration": 75,
+    "investment": 500,
+    "pests": ["Carrot Fly", "Root Knot Nematode"]
+  },
+  {
+    "name": "Potato",
+    "scientificName": "Solanum tuberosum",
+    "type": "Vegetable",
+    "description": "Tuber crop grown underground.",
+    "soilTypes": ["Loamy", "Clay"],
+    "seasons": ["Spring", "Autumn"],
+    "water": "Medium",
+    "duration": 100,
+    "investment": 1200,
+    "pests": ["Potato Beetle", "Wireworms"]
+  },
+  {
+    "name": "Soybean",
+    "scientificName": "Glycine max",
+    "type": "Oilseed",
+    "description": "Used for its protein-rich seeds.",
+    "soilTypes": ["Clay Loam", "Black Soil"],
+    "seasons": ["Kharif"],
+    "water": "Medium",
+    "duration": 100,
+    "investment": 20000,
+    "pests": ["Soybean Aphid", "Root Rot"]
+  },
+  {
+    "name": "Maize",
+    "scientificName": "Zea mays",
+    "type": "Cereal",
+    "description": "Staple crop used for food and feed.",
+    "soilTypes": ["Loamy", "Sandy Loam"],
+    "seasons": ["Kharif", "Rabi"],
+    "water": "Medium",
+    "duration": 90,
+    "investment": 18000,
+    "pests": ["Corn Earworm", "Aphids"]
+  },
+  {
+    "name": "Cotton",
+    "scientificName": "Gossypium spp.",
+    "type": "Fiber",
+    "description": "Grown for its fiber used in textiles.",
+    "soilTypes": ["Black Cotton", "Alluvial"],
+    "seasons": ["Kharif"],
+    "water": "Medium",
+    "duration": 150,
+    "investment": 40000,
+    "pests": ["Aphids", "Bollworm"]
+  },
+  {
+    "name": "Groundnut",
+    "scientificName": "Arachis hypogaea",
+    "type": "Oilseed",
+    "description": "Nut crop used for edible oil.",
+    "soilTypes": ["Sandy Loam", "Red Soil"],
+    "seasons": ["Kharif", "Rabi"],
+    "water": "Low",
+    "duration": 120,
+    "investment": 25000,
+    "pests": ["Leaf Miner", "Aphids"]
+  },
+  {
+    "name": "Pigeon Pea",
+    "scientificName": "Cajanus cajan",
+    "type": "Pulse",
+    "description": "Legume crop used for pulses.",
+    "soilTypes": ["Sandy Loam", "Red Soil"],
+    "seasons": ["Kharif"],
+    "water": "Low",
+    "duration": 150,
+    "investment": 15000,
+    "pests": ["Pod Borer", "Wilt"]
+  }
 ]
