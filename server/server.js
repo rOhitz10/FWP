@@ -28,7 +28,8 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
-app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/user', require('./routes/userRoutes'));
+app.use('/api/seller',require('./routes/sellerRoutes'));
 
 // Health check endpoint
 app.get('/health', (req, res) => {

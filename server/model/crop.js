@@ -1,17 +1,17 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const cropSchema = new mongoose.Schema({
-    name: {type: String,required: true},
-    soil: {type: String,required: true},
-    season: {type: Array,required: true},
-    investment: {type: Number,required: true},
-    waterReq: {type: Number,required: true},
-    profit: {type: Number,required: true},
-    brief: {type: String,required: true},
-    info:{type: String,required: true},
-    img: {type: String,required: true}
-},{collection: 'crops',timestamps: true})
+  name: { type: String, required: true },
+  scientificName: String,
+  description: String,
+  suitableSoilTypes: [String],
+  suitableSeasons: [String],
+  waterRequirements: String, // 'High', 'Medium', 'Low'
+  averageInvestment: Number,
+  growthDuration: Number, // in days
+  commonPests: [String],
+  images: [String],
+  suitabilityScore: { type: Number, default: 0 }
+});
 
-const Crop = mongoose.model('Crop',cropSchema)
-
-module.exports = Crop
+module.exports = mongoose.model('Crop', cropSchema);

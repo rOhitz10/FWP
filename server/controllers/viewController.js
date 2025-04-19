@@ -3,23 +3,76 @@ const Product = require('../model/product')
 const Crop = require('../model/crop')
 const redisClient = require('../utils/redisClient')
 
-// module.exports.cropResults_post = async (req, res) => {
-//     const data = await Crop.find({
-//         soil: req.body.soilType,
-//         season: req.body.season,
-//         investment: { $lt: parseInt(req.body.investment) }
-//     })  
-//     res.render('cropResults', { data: data })
-// }
-
-module.exports.getCrops_get = async (req, res) => {
-    const data = await Crop.find({}).lean()
-    res.json(data)
+module.exports.getCropRecommendation = async(req,res) =>{
+    try {
+        
+        const {soilType, season,waterAvailability,investmentRange} = req.body;
+        
+        if (!soilType || !season || !waterAvailability || !investmentRange) {
+            return res.status(400).json({ message: "Please provide all the required parameters" });        
+        }
+        const query = {
+            suitableSoil : soilType,
+            suitableSeason :season,
+            waterRequired:{$lte :waterAvailability},
+            investmentRange:{$lte :investmentRange}
+        }
+        const crop = await Crop.find(query).limit(2);
+        
+        if (crop.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "No crops found matching your criteria"
+            });
+        }     
+    
+    const cropWithScores = crop.map(crop => {
+        let score = 0;
+        if (Array.isArray(crop.suitableSoilTypes) && crop.suitableSoilTypes.includes(soilType)) score += 30;
+        if (Array.isArray(crop.suitableSeason) && crop.suitableSeason.includes(season)) score += 30;
+        if (crop.waterRequired <= waterAvailability) score += 20;
+        if (crop.investmentRange <= investmentRange) score += 20;
+        
+        return { ...crop, score };
+    });
+    
+    return res.status(200).json(
+        { success: true, message: "Crop recommendation found", data: cropWithScores }    );
+ } catch (error) {
+        console.error('Crop recommendation error:', error);
+        return res.status(500).json({
+            success: false,
+            message: "Internal server error while processing recommendations",
+            error: process.env.NODE_ENV === 'development' ? error.message : undefined
+        });
+    }
 }
 
-module.exports.market_get = async (req, res) => {
+
+module.exports.getAllProducts = async (req, res) => {
     const results = await Product.find({}).lean()
-    res.json(results)
+    res.status(200).json({ success: true, message: "All products", data: results })
+}
+
+module.exports.productpage_id_get = async (req, res) => {
+
+    const id = req.params.id;
+    let productDetails = {};
+    const key = `productDetails - ${id}`;
+    let clients = await redisClient.get(key);
+    if (!clients) {
+        console.log("Cache Miss");
+        productDetails = await Product.findById(id);
+
+        await redisClient.set(key , JSON.stringify(productDetails));
+    } else {
+        // already there
+        productDetails = clients;
+        productDetails = JSON.parse(productDetails);
+        console.log("Cache Hit");
+    }
+
+    res.json(productDetails);
 }
 
 module.exports.croppage_id_get = async (req, res) => {
@@ -41,26 +94,6 @@ module.exports.croppage_id_get = async (req, res) => {
     res.json(cropDetails);
 }
 
-module.exports.productpage_id_get = async (req, res) => {
-
-    let productDetails = {};
-    const id = req.params.id;
-    const key = `productDetails - ${id}`;
-    let clients = await redisClient.get(key);
-    if (!clients) {
-        console.log("Cache Miss");
-        productDetails = await Product.findById(id);
-
-        await redisClient.set(key , JSON.stringify(productDetails));
-    } else {
-        // already there
-        productDetails = clients;
-        productDetails = JSON.parse(productDetails);
-        console.log("Cache Hit");
-    }
-
-    res.json(productDetails);
-}
 
 
 module.exports.search_post = async (req, res) => {

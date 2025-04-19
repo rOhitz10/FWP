@@ -162,6 +162,7 @@ const ChatBotWrapper = styled.div`
   display: flex;
   justify-content:start;
   align-items: center;
+ 
 }
 
   .chatbot_box {
@@ -169,6 +170,7 @@ const ChatBotWrapper = styled.div`
   display: inline-flex;
   text-align: center;
  width: 100vw; 
+ margin-right:4rem;
 }
 
   .chatbot_box #chatbot_ul {

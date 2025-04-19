@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "dev":"nodemon server",
+    "dev": "nodemon server",
     "test": "mocha --timelimit 10000 --exit"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
+    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "chai": "^4.3.7",
@@ -21,11 +22,13 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "express-validator": "^7.2.1",
     "helmet": "^6.0.1",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^10.2.0",
     "mongoose": "^6.3.4",
     "morgan": "^1.10.0",
+    "nodemailer": "^6.10.0",
     "nodemon": "^2.0.18",
     "redis": "^4.6.5",
     "rotating-file-stream": "^3.1.0",

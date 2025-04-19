@@ -11,6 +11,7 @@ function AboutUs() {
                             <div className="title">
                                 <h1>About Us</h1>
                             </div>
+                            
                             <div className="content">
                                 <h3>One Stop For all Farmers!</h3>
                                 <p>

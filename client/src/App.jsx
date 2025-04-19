@@ -6,16 +6,15 @@ import CropSuggestion from './Components/CropSuggestion/CropSuggestion';
 import Market from './Components/Market/Market';
 import Homepage from './Components/Home/Homepage'
 import ProductPage from './Components/ProductPage/ProductPage';
-import Cart from './Components/Cart/Cart'
+import Cart from './Components/Cart/Cart.jsx'
 import CropSuggestionHistory from './Components/CropSuggestion/CropSuggestionHistory';
 import CropResults from './Components/CropResults/CropResults';
-import CheckoutPage from './Components/CheckoutPage/CheckoutPage';
+import CheckoutPage from './Components/CheckoutPage/CheckoutPage.jsx';
 import TransactionStatus from './Components/TransactionStatus/TransactionStatus';
 import AboutUs from './Components/AboutUs.js/AboutUs';
 import Signuppage from './Components/Signup/Signuppage';
 import Loginpage from './Components/Login/Loginpage';
 import CropPage from './Components/CropPage/CropPage'
-import Discussions from './Components/Discussions/Discussions';
 import ChatBot from './Components/ChatBot/ChatBot';
 import SearchResults from './Components/Market/SearchResults';
 import AdminPortal from './Components/AdminPortal/AdminPortal';
@@ -27,7 +26,6 @@ function App() {
   const [history, setHistory] = useState([])
   const [prod_data, setProdData] = useState([])
   const [crop_data, setCropData] = useState([])
-
 
   const CropSuggestionHistoryHandler = (item) => {
     setHistory((prev) => {
@@ -45,13 +43,13 @@ function App() {
 
 
   useEffect(() => {
-    fetch('https://fwp.onrender.com/Market')
+    fetch('http://localhost:4000/api/auth/Market')
       .then(res => res.json())
       .then(data => setProdData(data))
       .catch(err => console.log("Error: ", err))
 
 
-    fetch('https://fwp.onrender.com/crops')
+    fetch('http://localhost:4000/api/auth/crops')
       .then(res => res.json())
       .then(crops => setCropData(crops))
       .catch(err => console.log("Error: ", err))
@@ -77,7 +75,6 @@ function App() {
           <Route exact path='/search/pesticides/' element={prod_data && <Market data={prod_data.filter(x => x.category === "pesticides")} />}></Route>
           <Route exact path='/Market' element={localStorage.getItem('email') ? <Market data={prod_data.sort(() => Math.random() - 0.5).slice(0, 11)} /> :  <h1 style={{position:"relative",top:"10vh"}}>Please log in</h1>}></Route>
           <Route exact path='/CropSuggestion' element={<CropSuggestion onSearch={CropSuggestionHistoryHandler} />}></Route>
-          <Route exact path='/discussions' element={localStorage.getItem('email') ? <Discussions /> : <h1 style={{position:"relative",top:"10vh"}}>Please log in</h1>}></Route>
           <Route exact path='/login' element={<Loginpage onUserLogin={onUserLogin}/>}></Route>
           <Route exact path='/signup' element={<Signuppage onUserLogin={onUserLogin}/>}></Route>
           <Route exact path='/adminportal' element={<AdminPortal data={prod_data} products={prod_data}/>}></Route>

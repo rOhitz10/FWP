@@ -1,23 +1,24 @@
 const mongoose = require('mongoose')
-const bcryptjs = require('bcryptjs')
+
 
 const sellerSchema = new mongoose.Schema({
-    // username: {type: String, required: true,unique: true},
+    firstName:{type:String,required:true},
+    lastName:{type:String,required:true},
     email: {type: String, required: true, unique:  true},
-    name: {type: String, required: true},
+    phone:{type:String,required:true},
     password: {type: String, required: true},
-    profilepic:{type:String}
-    // products: {type: Array}
+    businessName:{type:String,required:true},
+    // businessType:{type:String,required:true},
+    products:[{type:mongoose.Schema.Types.ObjectId, ref:'Product'}],
+    address:{type:String,required:true},
+    city:{type:String,required:true},
+    state:{type:String,required:true},
+    zip:{type:String,required:true},
+    panId:{type:String,required:true},  
+    gstId:{type:String,required:true},
     },
     { collection: 'sellers'}
 )
-
-sellerSchema.pre('save',async function(next){
-    // const salt = await bcrypt.genSalt();
-    this.password = await bcryptjs.hash(this.password,12)
-    // console.log('User is about to be stored in database',this);
-    next();
-})
 
 
 const Seller = mongoose.model('sellerSchema', sellerSchema)
@@ -25,9 +26,4 @@ module.exports = Seller
 
 
 
-    // Seller.create ({
-    //     email : "rakesh.b20@iiits.in",
-    //     name : "Rakesh Bodavula",
-    //     password: "Rakesh@fsd2",
-    // })
 
