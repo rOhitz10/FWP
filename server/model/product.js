@@ -6,7 +6,8 @@ const productSchema = new mongoose.Schema({
     name: {type: String, required: true},
     mrp: {type: Number, required: true},
     price: {type: Number, required: true},
-    sellerId: {type: String, required: true},
+    sellerId: {type: String, required: true}, //eh te iko bande di aa
+    
     manufacturer: {type: String, required: true},
     weight: {type: Number, required: true},
     stock: {type: Boolean, required: true},
